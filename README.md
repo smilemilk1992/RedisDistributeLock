@@ -102,3 +102,25 @@ public class RedisTool {
 
 &ensp;&ensp;&ensp;&ensp;Lua代码的功能是首先获取锁对应的value值，检查是否与requestId相等，如果相等则删除锁（解锁），确保上述操作是原子性的。
 
+
+代码运行效果：
+```bash
+Thread-4 1553754545611 get lock..... uuid=cb1964bc-cf8d-4e62-8219-7a36cda260e8
+Thread-4 1553754546511 release lock..... uuid=cb1964bc-cf8d-4e62-8219-7a36cda260e8
+Thread-5 1553754546522 get lock..... uuid=8f7c1f6f-b884-4abc-8416-904045836318
+Thread-5 1553754547425 release lock..... uuid=8f7c1f6f-b884-4abc-8416-904045836318
+Thread-8 1553754547433 get lock..... uuid=440e4943-0060-495c-a440-60b8e1ddc387
+Thread-8 1553754548336 release lock..... uuid=440e4943-0060-495c-a440-60b8e1ddc387
+Thread-1 1553754548344 get lock..... uuid=e0d46bbd-ec87-48ce-a7e6-03af32045fe9
+Thread-1 1553754549247 release lock..... uuid=e0d46bbd-ec87-48ce-a7e6-03af32045fe9
+Thread-6 1553754549256 get lock..... uuid=d0db9ee9-c33f-43ce-bdfb-7251023fb51d
+Thread-6 1553754550158 release lock..... uuid=d0db9ee9-c33f-43ce-bdfb-7251023fb51d
+Thread-7 1553754550166 get lock..... uuid=1235940b-d059-4a09-8712-22fe00c0e647
+Thread-7 1553754551070 release lock..... uuid=1235940b-d059-4a09-8712-22fe00c0e647
+Thread-0 1553754551079 get lock..... uuid=d202c310-456b-4513-b839-588e05e8caae
+Thread-0 1553754551983 release lock..... uuid=d202c310-456b-4513-b839-588e05e8caae
+Thread-2 1553754551996 get lock..... uuid=a1c15151-3a5e-4fc4-899e-61c826bf8404
+Thread-2 1553754552900 release lock..... uuid=a1c15151-3a5e-4fc4-899e-61c826bf8404
+Thread-3 1553754552912 get lock..... uuid=356ecf5c-117f-493a-98b7-b360fe57afc7
+Thread-3 1553754553814 release lock..... uuid=356ecf5c-117f-493a-98b7-b360fe57afc7
+```
